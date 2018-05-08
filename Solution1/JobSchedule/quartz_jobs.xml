@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+
+  <schedule>
+
+    <!--FileJob测试 任务配置-->
+    <job>
+      <name>FileJob</name>
+      <group>File</group>
+      <description>FileJob测试</description>
+      <job-type>JobSchedule.FileJob.TestJob,JobSchedule</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+    </job>
+    <trigger>
+      <cron>
+        <name>FileJobTrigger</name>
+        <group>FileTrigger</group>
+        <job-name>FileJob</job-name>
+        <job-group>File</job-group>
+        <cron-expression>0/3 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+
+  </schedule>
+</job-scheduling-data>

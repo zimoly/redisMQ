@@ -13,7 +13,7 @@ namespace Redis
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //RedisUtility.SetCatch<string>("teststring","helloword", 24 * 60 * 60);
+            //RedisUtility.SetCatch<string>("teststring", "helloword", 24 * 60 * 60);
             string testStr = RedisUtility.GetCatch<string>("teststring");
             Response.Write(testStr);
            
